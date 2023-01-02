@@ -1,0 +1,260 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<style>
+
+    .w3-theme-l5 {color:#000 !important; background-color:#fee5e5 !important}
+    .w3-theme-l4 {color:#000 !important; background-color:#fba7a7 !important}
+    .w3-theme-l3 {color:#fff !important; background-color:#f84f4f !important}
+    .w3-theme-l2 {color:#fff !important; background-color:#e10909 !important}
+    .w3-theme-l1 {color:#fff !important; background-color:#890606 !important}
+    .w3-theme-d1 {color:#fff !important; background-color:#2c0202 !important}
+    .w3-theme-d2 {color:#fff !important; background-color:#270202 !important}
+    .w3-theme-d3 {color:#fff !important; background-color:#220101 !important}
+    .w3-theme-d4 {color:#fff !important; background-color:#1d0101 !important}
+    .w3-theme-d5 {color:#fff !important; background-color:#180101 !important}
+    
+    .w3-theme-light {color:#000 !important; background-color:#fee5e5 !important}
+    .w3-theme-dark {color:#fff !important; background-color:#180101 !important}
+    .w3-theme-action {color:#fff !important; background-color:#180101 !important}
+    
+    .w3-theme {color:#fff !important; background-color:#330202 !important}
+    .w3-text-theme {color:#330202 !important}
+    .w3-border-theme {border-color:#330202 !important}
+    
+    .w3-hover-theme:hover {color:rgb(0, 0, 0) !important; background-color:rgb(0, 0, 0) !important}
+    .w3-hover-text-theme:hover {color:#330202 !important}
+    .w3-hover-border-theme:hover {border-color:#330202 !important}
+    * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+html {
+    background-color: black;
+}
+
+.movTitle {
+    padding-left: 360px;
+    color:rgb(210, 207, 207);
+    position: absolute;
+    letter-spacing: 0.3px;
+}
+
+.movDesc {
+    float:inline-end;
+    color:rgb(210, 207, 207);
+    position: relative;
+    align-self: flex-start;
+    padding-top: 20px;
+    padding-left: 15px;
+    letter-spacing: 0.2px;
+}
+
+.evPic{
+	display: block;
+	height: 200px;;;
+	width: 161px;
+	margin-left: 125px;
+    padding-top: 20px;
+}
+
+.relative {
+  position: relative;
+  left: 100px;
+  width: 1200px;
+}
+
+.event {
+    padding: 10px
+}      
+    </style>
+
+<head>
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel = "stylesheet" href="index.css" />
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+    <title>
+    
+    </title>
+
+</head>
+
+<div class="w3-top w3-theme">
+    <div class="w3-bar w3-card w3-theme">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Home</a>
+      <a href="/cancellation" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black">Help</a>
+      <a href="/about" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black">About US</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+      <!--<button class="w3-padding-large w3-button w3-hover-black" title="More">More <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">Help</a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">Contact</a>
+          <a href="#" class="w3-bar-item w3-button w3-hover-black">FAQ</a>
+      </div>-->
+      </div>
+      <a href="/login" class="w3-bar-item w3-button w3-right w3-padding-large w3-hide-small w3-hover-black">Login</a>
+    </div>
+    </div>
+
+<br><br>
+
+<body style="box-sizing:border-box;background-color: black;">
+    <br><br>
+
+    <!-- Slideshow container -->
+        <h3 style="color:rgb(208, 207, 207); text-align:center; letter-spacing: 0.5px;">
+            <b>
+            Now Playing
+            </b>
+        </h3>
+        <br>
+        <div class="slideshow-container" style="  max-width: 700px;position: relative;margin: auto;">
+
+    <!-- Full-width images with number and caption text -->
+            <a href="/moviepage"><div class="mySlides fade"style="animation-name: fade;animation-duration: 1.5s;">
+                <img class="logoImg" src="{% static 'uncharted.jpg' %}" alt="log" style="width:50%; float:left;margin-right: 10px;">               
+                <h4 class="movTitle" style="padding-left: 360px;color:rgb(210, 207, 207);position: absolute;letter-spacing: 0.3px;">Uncharted</h4>
+                <br> <br>
+                <p class="movDesc" style="float:inline-end;color:rgb(210, 207, 207);position: relative;align-self: flex-start;padding-top: 20px;padding-left: 15px;letter-spacing: 0.2px;">Treasure hunter Victor "Sully" Sullivan recruits street-smart Nathan Drake 
+                    to help him recover a 500-year-old lost fortune amassed by explorer Ferdinand Magellan. 
+                    What starts out as a heist soon becomes a globe-trotting, white-knuckle race to reach the 
+                    prize before the ruthless Santiago Moncada can get his hands on it. If Sully and Nate can 
+                    decipher the clues and solve one of the world's oldest mysteries, they stand to find $5 
+                    billion in treasure -- but only if they can learn to work together.</p>
+            </div></a>
+  
+            <a href="/moviepage"><div class="mySlides fade"style="animation-name: fade;animation-duration: 1.5s;">
+                <img style="width:50%; float:left;margin-right: 10px;"src="{% static 'batman.jpg' %}">
+                <h4 class="movTitle",style="padding-left: 360px;color:rgb(210, 207, 207);position: absolute;letter-spacing: 0.3px;" >The Batman</h4>
+                <br> <br>
+                <p class="movDesc" style="float:inline-end;color:rgb(210, 207, 207);position: relative;align-self: flex-start;padding-top: 20px;padding-left: 15px;letter-spacing: 0.2px;">
+                    Batman ventures into Gotham City's underworld when a sadistic killer leaves behind a trail of cryptic clues.
+                     As the evidence begins to lead closer to home and the scale of the perpetrator's plans become clear, he must 
+                     forge new relationships, unmask the culprit and bring justice to the abuse of power and corruption that has long 
+                     plagued the metropolis.
+                    
+                </p>
+            </div></a>
+  
+            <a href="/moviepage"><div class="mySlides fade"style="animation-name: fade;animation-duration: 1.5s;">
+                <img style="width:50%; float:left;margin-right: 10px;"src="{% static 'blackp.jpg' %}">
+                <h4 class="movTitle">Black Panther</h4>
+                <br> <br>
+                <p class="movDesc">
+                    After the death of his father, T'Challa returns home to the African nation of Wakanda to take his 
+                    rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as 
+                    Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire 
+                    world at risk. Faced with treachery and danger, the young king must rally his allies and release the full 
+                    power of Black Panther to defeat his foes and secure the safety of his people.
+                </p>
+            </div></a>
+
+
+  <script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 9000); // Change image every 2 seconds
+}
+  </script>
+  </div>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<div style="display: flex;
+justify-content: center;
+align-items: center;">
+    <button style="background-color:#2c0202; color:white;">
+        More Movies Playing Right Now
+    </button>
+</div>
+
+<br><br>
+    <div class="events" style="padding-left:20px">
+        <h4 style="color:rgb(208, 207, 207)">
+            <b style="padding-left: 40px; margin-bottom:30px">
+            Events near me
+            </b>
+        </h4>
+
+        <a href="/moviepage"><div class="event">
+        <img class = "evPic" src="{% static 'rockhor.jpg' %}" style="float:left";/>
+			<div class="relative">
+			<h4 style="color:rgb(208, 207, 207)"> The Rocky Horror Picture Show </h4>
+            <p style="color:rgb(208, 207, 207)">Location: Buskirk Chumley Theatre, Bloomington, IN</p>
+			<p style="color:rgb(208, 207, 207)"> Let’s do the Time Warp again! Constellation Stage & Screen continues The Rocky Horror Picture Show 
+                tradition this Halloween weekend! Join us for an interactive screening on Saturday, October 29 at 
+                7:00pm & 11:00pm. </p>
+			</div>
+        </div></a>
+
+        <a href="/moviepage"><div class="event">
+        <img class = "evPic" src="{% static 'okla.jpg' %}" style="float:left";/>
+			<div class="relative">
+			<h4 style="color:rgb(208, 207, 207)"> Roger and Hammenstein's Oklahoma! </h4>
+            <p style="color:rgb(208, 207, 207)">Location: Buskirk Chumley Theatre, Bloomington, IN</p>
+			<p style="color:rgb(208, 207, 207)"> Oh, What a beautiful morning! Oh, what a beautiful day!
+                BHSS Sounds of South presents its fall production Oklahoma on October 15th, 22nd, and 29th at 7:30pm. Doors will open 1 hour before each performance at BHSS Carmichael Hall. Will-call will be available at the Bloom Box Office at the Buskirk-Chumley Theater during our regular box office schedule up until 2pm on the day of the event. After that will-call will be transferred to the venue for pick up when doors open. Ticket Sales and Will Call at door will begin at 6:30pm, doors open at 7:00pm, performance at 7:30pm.
+                </p>
+			</div>
+        </div></a>
+
+        <a href="/moviepage"><div class="event">
+        <img class = "evPic" src="{% static 'ron.jpg' %}" style="float:left";/>
+			<div class="relative">
+			<h4 style="color:rgb(208, 207, 207)"> Ron White </h4>
+            <p style="color:rgb(208, 207, 207)">Location: IU Auditorium, Bloomington, IN</p>
+			<p style="color:rgb(208, 207, 207)"> Comedian Ron “Tater Salad” White first rose to fame as the cigar-smoking, scotch-drinking 
+                funnyman from the Blue Collar Comedy Tour phenomenon, but now as a chart-topping Grammy-nominated comedian and a feature film 
+                actor, Ron White has established himself as a star in his own right. He'll be making his return to Bloomington with a new stand-up 
+                show this fall. </p>
+			</div>
+        </div></a>
+        
+        <div style="display: flex;justify-content: center;align-items: center;">
+            <button style="background-color:#2c0202; color:white;">
+                More Events Near Me
+            </button>
+        </div>
+
+    </div>
+    <br><br>
+</body>

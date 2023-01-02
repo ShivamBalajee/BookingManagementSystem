@@ -1,0 +1,118 @@
+.login{ 
+    margin: auto;  
+    border-radius: 15px ;  
+    text-decoration-color: white;
+}  
+
+form {
+background-color: #270202;
+margin-right: 300px;
+align-items: center;
+}
+
+html {
+background-color: black;
+}
+
+
+
+.container1{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 98%;
+max-height: 610px;
+background-color: black;
+padding-left: 30px;
+}
+
+.container1 .panel1{
+width: 60%;
+height: 72%;
+box-shadow: var(--primary-gradient);
+background-color: white;
+}
+
+.row1{
+display: grid;
+grid-template-columns: 65% 35%;
+height: 100%;
+background: black;
+}
+
+
+
+.liquid h4{
+text-align: left;
+background-color: black;
+font-family: var(--Montserrat);
+margin-right: 30px;
+}
+
+.owl-carousel{
+width: 200px;
+height: 820px;
+align-items: center;
+}
+
+.owl-carousel .owl-item .login_img{
+float: right;
+width: 500px;
+height: 440px;
+background-repeat: no-repeat;
+background-size: cover;
+padding-right: 30px;
+margin-left: 30px;
+align-items: center;
+
+}
+
+.owl-dots{
+position: fixed;
+padding: 3rem 1.2rem;
+display: flex !important;
+flex-direction: column;
+transform: translateY(-240px);
+}
+
+.owl-dots button{
+border-radius: 5rem;
+margin: .3rem 0;
+}
+
+.owl-dots button span{
+background: var(--text-color) !important;
+margin: 0rem .6rem !important;
+}
+
+.owl-dots .active{
+border: 1px solid #ffd765 !important;
+}
+
+.owl-dots .active span{
+background: #ffd765 !important;
+margin: .3rem .5rem !important;
+}
+
+.follow{
+padding: 0 1.4rem;
+padding-top: 1.4rem;
+font-family: var(--Lobster);
+color: whitesmoke;
+position: relative;
+font-size: .9rem;
+}
+
+.follow::after{
+content: "";
+position: absolute;
+left: 14%;
+width: 50px;
+border: 1px solid whitesmoke;
+border-radius: 4rem;
+margin-top: .5rem;
+}
+
+.follow i:first-child{
+margin-left: 4rem;
+}

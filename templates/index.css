@@ -1,0 +1,66 @@
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+html {
+    background-color: black;
+}
+
+.movTitle {
+    padding-left: 360px;
+    color:rgb(210, 207, 207);
+    position: absolute;
+    letter-spacing: 0.3px;
+}
+
+.movDesc {
+    float:inline-end;
+    color:rgb(210, 207, 207);
+    position: relative;
+    align-self: flex-start;
+    padding-top: 20px;
+    padding-left: 15px;
+    letter-spacing: 0.2px;
+}
+
+.evPic{
+	display: block;
+	height: 200px;;;
+	width: 161px;
+	margin-left: 125px;
+    padding-top: 20px;
+}
+
+.relative {
+  position: relative;
+  left: 100px;
+  width: 1200px;
+}
+
+.event {
+    padding: 10px
+}
